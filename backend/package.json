@@ -1,0 +1,36 @@
+{
+  "name": "adinn-design-task-manager-api",
+  "version": "3.0.0",
+  "description": "Enterprise-ready backend API for Adinn design work allocation, designer workload planning, file handling, audit trail, and reports",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "watch": "nodemon src/server.js",
+    "reset:data": "node src/scripts/resetData.js",
+    "health": "node src/scripts/healthCheck.js",
+    "preflight": "node src/scripts/preflight.js",
+    "backup:data": "node src/scripts/backupData.js",
+    "migrate:file-to-supabase": "node src/scripts/migrateFileToSupabase.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

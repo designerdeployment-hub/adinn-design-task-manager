@@ -1,0 +1,25 @@
+{
+  "name": "adinn-design-work-allocation-frontend",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint:check": "node -e \"console.log('No lint config required for this deployment package.')\"",
+    "preview:production": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {},
+  "description": "Enterprise-ready Adinn Design Work Allocation frontend"
+}

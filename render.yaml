@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: adinn-design-task-manager-api
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm ci || npm install
+    startCommand: npm run preflight && npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: true
+      - key: DATA_DRIVER
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_STATE_TABLE
+        value: app_state
+      - key: SUPABASE_STATE_KEY
+        value: adinn-design-task-manager
+      - key: UPLOAD_DIR
+        value: ./uploads
+      - key: BACKUP_DIR
+        value: ./data/backups
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: FRONTEND_ORIGIN
+        sync: false

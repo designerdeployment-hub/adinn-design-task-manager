@@ -1,0 +1,17 @@
+{
+  "name": "adinn-design-task-manager",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Adinn Design Work Allocation enterprise release",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "reset:data": "cd backend && npm run reset:data",
+    "preflight": "npm run preflight --prefix backend"
+  }
+}

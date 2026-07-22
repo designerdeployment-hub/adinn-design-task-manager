@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: ./backend
+    container_name: adinn-design-workflow-api
+    ports:
+      - "5001:5001"
+    environment:
+      NODE_ENV: production
+      PORT: 5001
+      FRONTEND_ORIGIN: http://localhost:5173
+      JWT_SECRET: replace_this_with_a_long_random_secret_before_real_use
+      JWT_EXPIRES_IN: 7d
+      DATA_FILE: /data/db.json
+      UPLOAD_DIR: /data/uploads
+      BACKUP_DIR: /data/backups
+      TRUST_PROXY: "true"
+      MAX_FILE_SIZE_MB: 50
+      MAX_FILES_PER_REQUEST: 20
+    volumes:
+      - adinn-design-data:/data
+    healthcheck:
+      test: ["CMD", "node", "src/scripts/healthCheck.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  adinn-design-data:
