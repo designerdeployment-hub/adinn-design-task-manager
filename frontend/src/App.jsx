@@ -219,7 +219,7 @@ function LoginScreen({ onLogin, notify, toast }) {
           <img src="/adinn-logo.png" alt="Adinn Advertising Services Ltd." className="heroLogo" />
         </div>
         <div className="brandKicker">Creative Operations System</div>
-        <h1>Design Work Allocation</h1>
+        <h1>Design Work AllocationSSSS</h1>
         <p>Assign design requests, review designer workload by timing, filter designers by vertical, and maintain a professional approval trail for every creative task inside Adinn.</p>
         <div className="loginHighlights">
           <span>Role-based access</span>
