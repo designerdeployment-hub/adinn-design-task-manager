@@ -83,7 +83,8 @@ async function request(path, options = {}) {
 
   if (cacheable) inFlightRequests.set(cacheKey, run);
   try {
-    return cloneData(await run);
+    const result = await run;
+    return options.raw ? result : cloneData(result);
   } finally {
     if (cacheable) inFlightRequests.delete(cacheKey);
   }
